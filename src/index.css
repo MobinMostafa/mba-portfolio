@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.frame{
+  background-image: url('./assets/images/Frame-10.png');
+}
+
+body{
+    font-family: "Poppins" sans-serif;
+}
+.swiper-button-next::after, .swiper-button-prev::after{
+    display: none;
+}
+ 
