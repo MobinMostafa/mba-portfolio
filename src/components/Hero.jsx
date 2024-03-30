@@ -1,8 +1,12 @@
-import Swiper from 'swiper/bundle';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css'; // Import Swiper styles
+import 'swiper/css/pagination'; // Pagination styles
+import 'swiper/css/navigation';
 
 // import styles bundle
-import 'swiper/css/bundle';
-import { Navigation, Pagination } from 'swiper/modules';
+
+import { Keyboard, Pagination, Navigation } from 'swiper/modules';
 
 import Left from "../assets/images/hero-icon-left.svg"
 import Right from "../assets/images/hero-icon-right.svg"
@@ -11,21 +15,7 @@ import SliderImage from "../assets/images/slider-banner.jpg"
 
 
 const Hero = () => {
-    const swiper = new Swiper('.swiper', {
-        // configure Swiper to use modules
-        slidesPerView: "1",
-        loop: true,
-        modules: [Navigation, Pagination],
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-        // Navigation arrows
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      });
+ 
  
     const SliderBanner = [
         {
@@ -100,12 +90,24 @@ const Hero = () => {
         </div>
         </div>
         {/* Swiper */}
-        <div
-         className="swiper mySwiper w-100 md:h-[200px] relative mt-[1.5rem] max-w-[100%]">
+        <Swiper
+        slidesPerView={1}
+        keyboard={{
+          enabled: true,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation = {{
+          nextEl : '.swiper-button-next',
+          prevEl : '.swiper-button-prev',
+        }}
+        modules={[Keyboard, Pagination, Navigation]}
+        className="mySwiper w-100 md:h-[200px] relative mt-[1.5rem] max-w-[100%]">
         <div className="swiper-wrapper h-[350px] md:h-[200px]">
            {
             SliderBanner.map((slider) => (
-            <div className="swiper-slide me-1 w-[100%]" key={slider.id}>
+            <SwiperSlide  className=" me-1 w-[100%]" key={slider.id}>
             <div className="flex-row md:flex md:relative">
                 <div className="sm:w-[100%] md:w-[50%] lg:w-[50%] xl:w-[50%] bg-white">
                 <div className="hidden md:block lg:top-[-3%] lg:w-[21rem] lg:h-[203%] xl:w-[23rem] xl:h-[150%] absolute right-[16rem] -top-[3.25rem] w-[52%] 2xl:w-[56%] 2xl:-top-[8rem] desktop-lg:w-[168%] desktop-lg:top-[-51rem] desktop-lg:h-[194%] h-[135%] bg-white rotate-45 border-primary-1 border-t-[16px] border-r-[16px] rounded-tr-[1.5rem] rounded-r-[1.5rem]" />
@@ -122,7 +124,7 @@ const Hero = () => {
                 <img src={slider.image} className="bg-cover h-[200px] w-[100%]" alt="" />
                 </div>
             </div>
-            </div>
+            </SwiperSlide>
             ))
            }
         </div>
@@ -133,7 +135,7 @@ const Hero = () => {
         <div className="swiper-button-next absolute md:top-[50%] md:right-[1.25rem]">
             <i className="fa-solid fa-angle-right text-black text-[1rem] md:text-[1.5rem] py-1 px-2 border-2 border-primary-2 rounded-[50%]" />
         </div>
-        </div>
+        </Swiper>
     </div>
     </section>
 
