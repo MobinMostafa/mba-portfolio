@@ -1,13 +1,19 @@
-let menu_open = document.getElementById("menu_open");
-let menu_close = document.getElementById("menu_close")
-let menu_close_icon = document.getElementById("menu_close_icon")
 
-menu_open.addEventListener("click", () => {
-    menu_close.classList.remove("hidden");
-    menu_open.classList.add("hidden");
-})
-menu_close_icon.addEventListener("click", () => {
-    menu_close.classList.add("hidden");
-    menu_open.classList.remove("hidden");
-})
-
+new Swiper(".mySwiper", {
+    slidesPerView: "auto",
+    // spaceBetween: ,
+    // want to autoplay  then uncomment it
+    // autoplay: {
+    //   delay: 2500,
+    //   disableOnInteraction: false,
+    // },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  });

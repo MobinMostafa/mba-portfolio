@@ -1,8 +1,9 @@
-
 import Swiper from 'swiper/bundle';
 
-// import required modules
-import {Navigation, Pagination } from 'swiper/modules';
+// import styles bundle
+import 'swiper/css/bundle';
+import { Navigation, Pagination } from 'swiper/modules';
+
 import Left from "../assets/images/hero-icon-left.svg"
 import Right from "../assets/images/hero-icon-right.svg"
 import SliderImage from "../assets/images/slider-banner.jpg"
@@ -10,26 +11,22 @@ import SliderImage from "../assets/images/slider-banner.jpg"
 
 
 const Hero = () => {
-    // initialize swiper 
- new Swiper(".mySwiper", {
-    slidesPerView: "auto",
-    // spaceBetween: ,
-    // want to autoplay  then uncomment it
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    modules: [Navigation, Pagination],
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  });
+    const swiper = new Swiper('.swiper', {
+        // configure Swiper to use modules
+        slidesPerView: "1",
+        loop: true,
+        modules: [Navigation, Pagination],
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+ 
     const SliderBanner = [
         {
             id:1,
@@ -103,7 +100,8 @@ const Hero = () => {
         </div>
         </div>
         {/* Swiper */}
-        <div className="swiper mySwiper w-100 md:h-[200px] relative mt-[1.5rem] max-w-[100%]">
+        <div
+         className="swiper mySwiper w-100 md:h-[200px] relative mt-[1.5rem] max-w-[100%]">
         <div className="swiper-wrapper h-[350px] md:h-[200px]">
            {
             SliderBanner.map((slider) => (
