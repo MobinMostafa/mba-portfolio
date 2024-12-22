@@ -58,7 +58,7 @@ const Header = () => {
                     Blog</a>
                 </div>
                 <div className="py-6">
-                  <a href="https://mbaroles.com/login" className="text-sm font-medium text-gray-200">
+                  <a href="" className="text-sm font-medium text-gray-200">
                     Login / Register
                   </a>
                 </div>
@@ -68,10 +68,10 @@ const Header = () => {
         </div>)}
         {/* mobin menu close */}
         <div className="hidden md:flex items-center gap-2 sm:gap-6 md:gap-8">
-          <a href="https://mbaroles.com/login" className="text-sm font-medium text-gray-200">
+          <a href="" className="text-sm font-medium text-gray-200">
             Login / Register
           </a>
-          <a href="https://mbaroles.com/employer/jobs/post" className="py-2 inline-flex items-center gap-1 px-4 text-sm font-medium rounded-lg md:px-8 sm:px-6 bg-primary-2">
+          <a href="" className="py-2 inline-flex items-center gap-1 px-4 text-sm font-medium rounded-lg md:px-8 sm:px-6 bg-primary-2">
             <svg className="size-4 fill-gray-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
               <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
             </svg>
@@ -84,19 +84,19 @@ const Header = () => {
       <nav className="px-10 max-w-screen md:max-w-[64rem] lg:max-w-[72rem] xl:max-w-[80rem] 2xl:max-w-[110rem] mx-auto h-10 py-1.5 flex flex-col justify-center">
         <ul className="flex items-center gap-5 xl:text-xl md:text-lg text-sm font-medium">
           <li>
-            <a href="https://mbaroles.com">Home</a>
+            <a href="">Home</a>
           </li>
           <li aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-0">
             <button type="button" href>Rankings</button>
           </li>
           <li>
-            <a href="https://mbaroles.com/jobs"> Jobs </a>
+            <a href=""> Jobs </a>
           </li>
           <li>
-            <a href="https://mbaroles.com/employers"> Employers </a>
+            <a href=""> Employers </a>
           </li>
           <li>
-            <a href="https://mbaroles.com/blog"> Blog </a>
+            <a href=""> Blog </a>
           </li>
         </ul>
       </nav>
